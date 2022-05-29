@@ -1,6 +1,6 @@
 Feature: Android Login
 
-  @BrowserStack @login
+  @BrowserStack  @login
   Scenario: Android successful login
     When user selects country
     And user clicks close button

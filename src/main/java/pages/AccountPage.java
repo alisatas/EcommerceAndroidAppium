@@ -10,7 +10,7 @@ public class AccountPage extends PageBase{
     }
 
 
-    @AndroidFindBy(id = "trendyol.com:id/action_bar_root")
+    @AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.widget.FrameLayout[2]/android.widget.FrameLayout/android.view.ViewGroup/android.widget.TextView[4]")
     MobileElement rootBar;
 
     @AndroidFindBy(id = "trendyol.com:id/textViewWelcoming")
