@@ -1,4 +1,4 @@
-Feature: Android Login
+Feature: happy and sad
 
   @BrowserStack  @login
   Scenario: Android successful login

@@ -9,7 +9,6 @@ public class GenderStepDefinition extends TestBase {
 
     GenderPage genderPage;
 
-
     @And("user clicks close button")
     public void  user_clicks_close_button() {
         genderPage= new GenderPage(driver);

@@ -23,4 +23,5 @@ public class BasketPage extends PageBase{
     public void priceEqualsCheck(){
         super.controlAssertionEqual(getBasketPrice,ProductDetailPage.price);
     }
+
 }

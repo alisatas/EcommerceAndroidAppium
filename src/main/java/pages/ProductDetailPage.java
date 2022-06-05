@@ -3,6 +3,7 @@ package pages;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
+import org.openqa.selenium.support.FindBy;
 
 public class ProductDetailPage extends PageBase {
     static String  price;
@@ -10,8 +11,14 @@ public class ProductDetailPage extends PageBase {
         super(appiumDriver);
     }
 
-    @AndroidFindBy(id = "trendyol.com:id/textViewDiscountedPrice")
+    @FindBy(id = "trendyol.com:id/textViewDiscountedPrice")
     MobileElement productPrice;
+
+    @AndroidFindBy(id = "trendyol.com:id/primaryButton")
+    MobileElement addBasket;
+
+    @AndroidFindBy(id = "trendyol.com:id/imageViewClose\n")
+    MobileElement closeX;
 
     public String setProductPrice() {
         price=getAttribute(productPrice,"text");
@@ -19,11 +26,12 @@ public class ProductDetailPage extends PageBase {
         return price;
     }
 
-    @AndroidFindBy(id = "trendyol.com:id/primaryButton")
-    MobileElement addBasket;
     public void setAddBasket(){
         click(addBasket);
     }
 
 
+    public void clickPopUp() {
+        click(closeX);
+    }
 }

@@ -4,19 +4,28 @@ import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
+import java.util.List;
+
 import static io.appium.java_client.touch.WaitOptions.waitOptions;
 import static io.appium.java_client.touch.offset.PointOption.point;
 import static java.time.Duration.ofMillis;
+import static org.testng.AssertJUnit.assertFalse;
+import static org.testng.AssertJUnit.assertTrue;
 
 public class PageBase {
 
     AppiumDriver driver;
     public static final long WAIT=10;
+    private WebDriverWait wait;
+
 
     public PageBase(AppiumDriver appiumDriver) {
         PageFactory.initElements(new AppiumFieldDecorator(appiumDriver), this);
@@ -29,9 +38,20 @@ public class PageBase {
 
     }
 
+    public void waitByMilliSeconds(long milliseconds) {
+
+        try {
+            Thread.sleep(milliseconds);
+        } catch (InterruptedException e) {
+
+            e.printStackTrace();
+        }
+    }
+
     public void click(MobileElement element){
         waitForVisibility(element);
         element.click();
+        System.out.println("clicked");
     }
 
     public void sendText(MobileElement element, String text){

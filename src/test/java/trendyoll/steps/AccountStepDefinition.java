@@ -1,5 +1,6 @@
 package trendyoll.steps;
 
+import io.cucumber.java.en.And;
 import trendyoll.base.TestBase;
 import io.cucumber.java.en.Then;
 import pages.AccountPage;
@@ -13,5 +14,11 @@ public class AccountStepDefinition extends TestBase {
         accountPage.setRootBar();
         Thread.sleep(1000);
         accountPage.setGetEmailText(username);
+    }
+
+    @And("user clicks main Screen")
+    public void userClicksMainScreen() {
+        accountPage= new AccountPage(driver);
+        accountPage.setRootBar();
     }
 }
