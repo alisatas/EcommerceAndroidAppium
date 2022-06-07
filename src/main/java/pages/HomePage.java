@@ -21,8 +21,8 @@ public class HomePage extends PageBase {
     @FindBy(xpath = "//android.widget.FrameLayout[@content-desc=\"Anasayfa\"]/android.widget.ImageView\n")
     MobileElement setHomePageButton;
 
-
-
+    @FindBy(id = "trendyol.com:id/imageview_action_start")
+    MobileElement searchIconButton;
 
 
     public void clickFirstProductOnPage() {
@@ -41,5 +41,8 @@ public class HomePage extends PageBase {
 
     public void clickHomeButton() {
         click(setHomePageButton);
+    }
+
+    public void clickSearchIconButton() {click(searchIconButton);
     }
 }

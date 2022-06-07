@@ -36,7 +36,4 @@ public class AccountPage extends PageBase{
         sendText(searchBar, searchedText);
     }
 
-    public void setFirstValue(){
-        click(firstSearchedValue);
-    }
 }

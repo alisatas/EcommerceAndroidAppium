@@ -13,14 +13,14 @@ public class BasketPage extends PageBase{
     @AndroidFindBy(id= "trendyol.com:id/textViewSalePrice")
     MobileElement getProductPrice;
 
-    public String setGetProductPrice(){
+    public void setGetProductPrice(){
         getBasketPrice=getAttribute(getProductPrice,"text");
         System.out.println("Basket Price: " + getBasketPrice );
-        return getBasketPrice;
 
     }
 
     public void priceEqualsCheck(){
+        setGetProductPrice();
         super.controlAssertionEqual(getBasketPrice,ProductDetailPage.price);
     }
 

@@ -11,14 +11,14 @@ public class ProductDetailPage extends PageBase {
         super(appiumDriver);
     }
 
-    @FindBy(id = "trendyol.com:id/textViewDiscountedPrice")
+    @FindBy(id = "trendyol.com:id/textViewSalePrice")
     MobileElement productPrice;
 
     @AndroidFindBy(id = "trendyol.com:id/primaryButton")
     MobileElement addBasket;
 
-    @AndroidFindBy(id = "trendyol.com:id/imageViewClose\n")
-    MobileElement closeX;
+    @AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.RelativeLayout/android.widget.FrameLayout[1]/android.view.ViewGroup/a1.a/android.widget.LinearLayout/android.view.ViewGroup/android.widget.FrameLayout/androidx.recyclerview.widget.RecyclerView/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout[1]/android.widget.FrameLayout/android.view.ViewGroup")
+    MobileElement firstProductAmongProducts;
 
     public String setProductPrice() {
         price=getAttribute(productPrice,"text");
@@ -30,8 +30,7 @@ public class ProductDetailPage extends PageBase {
         click(addBasket);
     }
 
-
-    public void clickPopUp() {
-        click(closeX);
+    public void clickFirstProductAmongList() {
+        click(firstProductAmongProducts);
     }
 }

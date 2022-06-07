@@ -1,6 +1,7 @@
 package trendyoll.steps;
 
 import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
 import pages.HomePage;
 import trendyoll.base.TestBase;
@@ -24,13 +25,14 @@ public class HomePageStepDefinitions extends TestBase {
     @And("user click homePage button")
     public void userClickHomePageButton() {
         homePage=new HomePage(driver);
-
         homePage.clickHomeButton();
     }
 
-    @And("^\"([^\"]*)\" wait milliseconds$")
-    public void waitMillisecond(long milliseconds) {
+
+    @Given("user clicks search icon button")
+    public void userClicksSearchIconButton() {
         homePage=new HomePage(driver);
-        homePage.waitByMilliSeconds(milliseconds);
+        homePage.clickSearchIconButton();
+
     }
 }

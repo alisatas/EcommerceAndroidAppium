@@ -4,27 +4,22 @@ import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-
-import java.util.List;
+import utils.CustomLogger;
 
 import static io.appium.java_client.touch.WaitOptions.waitOptions;
 import static io.appium.java_client.touch.offset.PointOption.point;
 import static java.time.Duration.ofMillis;
-import static org.testng.AssertJUnit.assertFalse;
-import static org.testng.AssertJUnit.assertTrue;
 
 public class PageBase {
-
     AppiumDriver driver;
     public static final long WAIT=10;
     private WebDriverWait wait;
+
+    public static CustomLogger logger = new CustomLogger(PageBase.class);
 
 
     public PageBase(AppiumDriver appiumDriver) {
@@ -38,25 +33,18 @@ public class PageBase {
 
     }
 
-    public void waitByMilliSeconds(long milliseconds) {
-
-        try {
-            Thread.sleep(milliseconds);
-        } catch (InterruptedException e) {
-
-            e.printStackTrace();
-        }
-    }
 
     public void click(MobileElement element){
         waitForVisibility(element);
         element.click();
-        System.out.println("clicked");
+        logger.info("Clicked element: " + element);
     }
 
     public void sendText(MobileElement element, String text){
         waitForVisibility(element);
         element.sendKeys(text);
+        logger.info("Text is send successfully: " + text);
+
     }
 
     public String getAttribute(MobileElement element, String attribute){
@@ -66,6 +54,8 @@ public class PageBase {
     
     public void controlAssertionEqual(String actualText,String expectedText){
         Assert.assertEquals(actualText, expectedText);
+        logger.info(  "Actual text equals to expected text :  " + actualText +  expectedText);
+
     }
 
     public void swipeElements(MobileElement startElement,MobileElement endElement){

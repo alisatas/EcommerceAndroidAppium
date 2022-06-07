@@ -1,6 +1,6 @@
 Feature: happy and sad
 
-  @BrowserStack  @login
+  @Android  @login
   Scenario: Android successful login
     When user selects country
     And user clicks close button

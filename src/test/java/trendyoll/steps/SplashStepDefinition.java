@@ -12,9 +12,4 @@ public class SplashStepDefinition extends TestBase {
         splashPage=new SplashPage(driver);
         splashPage.setSelectCountry();
     }
-//
-//    @Given("user open application")
-//    public void userOpenApplication() throws MalformedURLException {
-//        androidSetUp();
-//    }
 }

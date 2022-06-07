@@ -1,5 +1,6 @@
 package trendyoll.hooks;
 
+import org.openqa.selenium.JavascriptExecutor;
 import trendyoll.base.TestBase;
 import io.cucumber.java.*;
 
@@ -20,16 +21,9 @@ public class BaseStepsDef extends TestBase {
             System.out.println("Platform tag name error");
         }
     }
-
-//    @After
-//    public void closeApp(Scenario scenario){
-//        JavascriptExecutor jse = (JavascriptExecutor) driver;
-//        if (scenario.isFailed()) {
-//            jse.executeScript("browserstack_executor: {\"action\": \"setSessionStatus\", \"arguments\": {\"status\":\"failed\", \"reason\": \"FAIL\"}}");
-//        } else {
-//            jse.executeScript("browserstack_executor: {\"action\": \"setSessionStatus\", \"arguments\": {\"status\": \"passed\", \"reason\": \"PASS\"}}");
-//        }
-//        tearDown();
-//    }
+    @After
+    public void closeApp(Scenario scenario){
+        tearDown();
+    }
 
 }

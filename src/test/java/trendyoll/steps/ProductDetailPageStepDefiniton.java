@@ -2,6 +2,7 @@ package trendyoll.steps;
 
 import io.appium.java_client.AppiumDriver;
 import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import pages.ProductDetailPage;
 import trendyoll.base.TestBase;
@@ -24,8 +25,10 @@ public class ProductDetailPageStepDefiniton extends TestBase {
         Thread.sleep(4000);
     }
 
-    @And("user clicks close pop up button")
-    public void userClicksClosePopUpButton() {
-        productDetailPage.clickPopUp();
+
+    @Given("user clicks first result among products list")
+    public void userClicksFirstResultAmongProductsList() {
+        productDetailPage= new ProductDetailPage(driver);
+        productDetailPage.clickFirstProductAmongList();
     }
 }

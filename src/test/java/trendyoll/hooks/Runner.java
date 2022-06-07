@@ -8,7 +8,8 @@ import io.cucumber.testng.CucumberOptions;
  glue = {"trendyoll"},
  tags = "@login",
  monochrome=true,
- plugin = {"pretty", "html:target/cucumber"}
+ plugin = {"pretty", "html:target/cucumber",
+           "json:target/cucumber-html-reports/json/cucumber.json"}
 )
 public class Runner extends AbstractTestNGCucumberTests {
 }
