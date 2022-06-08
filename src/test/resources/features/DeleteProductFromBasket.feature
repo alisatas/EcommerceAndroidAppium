@@ -13,14 +13,6 @@ Feature: Searching for a product and add to basket
     When user control product price area
     And user clicks add basket button
     Then user controls if prices equal
-
-  @Android
-  Scenario:Delete product from basket
-    Given user clicks search icon button
-    When user writes product name "Jil sander"
-    And user clicks first result on words list
-    Given user clicks first result among products list
-    When user control product price area
-    And user clicks add basket button
-    Then user controls if prices equal
-    Given user control delete button
+    Given user clicks delete button
+    When user clicks delete button on pop up
+    Then user control text "Sepetinizde ürün bulunmamaktadır"

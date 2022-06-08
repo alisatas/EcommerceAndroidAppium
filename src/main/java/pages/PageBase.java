@@ -4,6 +4,8 @@ import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
+import org.openqa.selenium.By;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -33,12 +35,12 @@ public class PageBase {
 
     }
 
-
     public void click(MobileElement element){
         waitForVisibility(element);
         element.click();
         logger.info("Clicked element: " + element);
     }
+    
 
     public void sendText(MobileElement element, String text){
         waitForVisibility(element);
@@ -54,7 +56,7 @@ public class PageBase {
     
     public void controlAssertionEqual(String actualText,String expectedText){
         Assert.assertEquals(actualText, expectedText);
-        logger.info(  "Actual text equals to expected text :  " + actualText +  expectedText);
+        logger.info(  "Actual text equals to expected text :  " + actualText   +   expectedText);
 
     }
 
